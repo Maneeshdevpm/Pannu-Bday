@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Pannu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6f0;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+    #heart {
+      font-size: 60px;
+      color: red;
+      cursor: pointer;
+      position: absolute;
+      transition: transform 0.3s, top 0.5s, left 0.5s;
+    }
+    #message, #game, #neet {
+      display: none;
+      max-width: 600px;
+      margin: 50px auto;
+      font-size: 1.2em;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    #image-container {
+      margin-top: 30px;
+    }
+    #romantic-message {
+      font-size: 1.5em;
+      color: #ff69b4;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="heart">❤️</div>
+  <div id="message">
+    <h1>Happy Birthday, Pannu!</h1>
+    <p>
+      My dearest Pannu, even though we're miles apart, my heart beats close to yours every second.
+      You light up my world just by existing. On your special day, I want you to know how deeply you're loved.
+      I can’t wait for the day we walk hand in hand under the streetlights of Kochi just like I said the other day. Hehe I love you cho choo much... Umma
+    </p>
+    <p>
+      Until that day, this little space is just for you – full of love, laughter, and a little magic.
+      Happy Birthday, my love.
+    </p>
+  </div>
+  <div id="image-container">
+    <img src="couple.jpg" alt="Couple Holding Hands" style="width: 80%; border-radius: 10px;">
+    <div id="romantic-message">This will be us, hand in hand, forever.</div>
+  </div>
+  <div id="neet">
+    <h2>All the Best for NEET!</h2>
+    <p>
+      You're going to shine so bright tomorrow.
+      Believe in yourself like I believe in you – endlessly and completely.
+      Go make your dreams come true, my rockstar!
+    </p>
+  </div>
+  <script>
+    const heart = document.getElementById('heart');
+    const message = document.getElementById('message');
+    const neet = document.getElementById('neet');
+
+    let clicks = 0;
+
+    function randomPosition() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
+    }
+
+    heart.addEventListener('click', () => {
+      clicks++;
+      if (clicks < 3) {
+        randomPosition();
+      } else {
+        heart.style.display = 'none';
+        message.style.display = 'block';
+        setTimeout(() => {
+          neet.style.display = 'block';
+        }, 5000);
+      }
+    });
+
+    randomPosition();
+  </script>
+</body>
+</html>
